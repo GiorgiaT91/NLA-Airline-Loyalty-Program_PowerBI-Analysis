@@ -1,15 +1,15 @@
 # NLA Airline Loyalty Program - PowerBI Analysis
 
-# Panoramica Progetto
+## Panoramica Progetto
 Questo progetto si concentra sull'analisi dei dati di Northern Lights Air (NLA), una compagnia aerea fittizia canadese che ha implementato una campagna promozionale tra Febbraio e Aprile 2018 per incrementare le iscrizioni al proprio programma di fidelizzazione.
 La dashboard sviluppata in Power BI si concentra sull’impatto della campagna sulle iscrizioni al loyalty program, sulle caratteristiche socio-demo degli iscritti e sul comportamento di volo durante l’estate successiva.
 
 ## Business Problem
-+ What impact did the campaign have on loyalty program memberships (gross / net)?
-+ Was the campaign adoption more successful for certain demographics of loyalty members?
-+ What impact did the campaign have on booked flights during summer?
++ Quale impatto ha avuto la campagna sulle iscrizioni al programma fedeltà (lordo/netto)?
++ L'adozione della campagna ha avuto più successo per alcuni gruppi demografici di membri del programma fedeltà?
++ Che impatto ha avuto la campagna sui voli prenotati durante l'estate?
 
-# 🛠 Tecnologie e strumenti
+## Tecnologie e strumenti
 Power BI Desktop
 DAX (Data Analysis Expressions)
 Power Query
