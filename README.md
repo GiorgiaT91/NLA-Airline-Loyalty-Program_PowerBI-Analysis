@@ -4,10 +4,14 @@
 Questo progetto si concentra sull'analisi dei dati di Northern Lights Air (NLA), una compagnia aerea fittizia canadese che ha implementato una campagna promozionale tra Febbraio e Aprile 2018 per incrementare le iscrizioni al proprio programma di fidelizzazione.
 La dashboard sviluppata in Power BI si concentra sull’impatto della campagna sulle iscrizioni al loyalty program, sulle caratteristiche socio-demo degli iscritti e sul comportamento di volo durante l’estate successiva.
 
+---
+
 ## Business Problem
 + Quale impatto ha avuto la campagna sulle iscrizioni al programma fedeltà (lordo/netto)?
 + L'adozione della campagna ha avuto più successo per alcuni gruppi demografici di membri del programma fedeltà?
 + Che impatto ha avuto la campagna sui voli prenotati durante l'estate?
+
+---
 
 ## Tecnologie e strumenti
 Power BI Desktop
@@ -15,6 +19,22 @@ DAX (Data Analysis Expressions)
 Power Query
 Data Modeling (relazioni 1:N, direzioni filtro e normalizzazione)
 🚀 Azioni svolte per la creazione del report
+
+---
+
+## Dati
+Il set di dati è stato preso dal sito [Maven Analytics](https://mavenanalytics.io/data-playground) e comprende tabelle contenenti informazioni su Customer Flight Activity e Customer Loyalty History.
+
+| Table                          | Description                               |
+|--------------------------------|-------------------------------------------|
+| Customer Flight Activity       | Contains data on flights from 2017 to 2018|
+| Customer Loyalty History       | Details of each loyalty number            |
+| Calendar                       | Date for time data analysis               |
+| Airplane Loyalty Data Dictionary | Description of all fields                |
+
+
+
+---
 
 # 1️⃣ Data Cleaning & Data Preparation
 Importazione di 3 dataset:
