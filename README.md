@@ -1,4 +1,4 @@
-# NLA-Airline-Loyalty-Program_PowerBI-Analysis
+# NLA Airline Loyalty Program - PowerBI Analysis
 
 # 📚 Descrizione
 Progetto di analisi dei dati di Northern Lights Air (NLA), una compagnia aerea fittizia canadese che ha implementato una campagna promozionale tra Febbraio e Aprile 2018 per incrementare le iscrizioni al proprio programma di fidelizzazione.
