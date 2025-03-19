@@ -1,8 +1,6 @@
 # NLA Airline Loyalty Program - PowerBI Analysis
 
-| |
-|:---:|
-| ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png) |
+
 
 ## Introduction to the Project
 This project focuses on data analysis of **Northern** **Lights** **Air** (NLA), a Canadian fictitious airline that implemented a promotional campaign between **February** **and** **April** **2018** to increase enrollments in its loyalty program.
@@ -90,9 +88,7 @@ The Power BI report is divided into **4** **pages**, each addressing specific an
 + Enrollment Trend Line Chart: Monthly trend of enrollments over several years with a focus on the Feb-Apr 2018 promotional period.
 + Comparative Analysis: Insights on enrollments compared to the previous period and the same months of the prior year, highlighting the campaign’s contribution.
 
-| |
-|:---:|
-| ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png) |
+
 
 **2)** **Revenue** **Focus**:
 + KPI Cards: Total and average CLV, flights per customer, average points accumulated and redeemed per customer.
