@@ -55,20 +55,27 @@ To ensure an accurate and consistent analysis, a data cleaning and data preparat
 ## Data Modeling
 The data model is structured according to a classic **star** **schema**, with Customer Flight Activity as the **fact** **table**, containing transactional data related to flights (number of flights, distance traveled, points accumulated/redeemed, etc.) and Customer Loyalty History as the **dimension** **table**, describing the profile of customers (master name, loyalty level, CLV, membership type). The relationship between the two tables is 1:N on the ***Loyalty*** ***Number*** key, where each customer can generate multiple flight activities over time. This schema allows analyzing the performance of the loyalty program by segmenting the results by demographic and behavioral characteristics of the members.
 
+To properly separate customer lifecycle events from transactional flight activity, the model includes two calendar tables:
++ Calendar is used for customer-level dates, such as enrollment and cancellation dates related to the loyalty program lifecycle.
++ Calendar_Flight Activity is a duplicate of the Calendar table, created specifically to manage the temporal dimension of the flight transactions.
+
+This approach ensures clean separation between the customer timeline (e.g., when a customer joined or left the program) and the flight activity timeline (e.g., flight bookings by month or season), avoiding overlaps in filters and enabling targeted time-based analysis for each context.
+
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_3.png)
+
 ---
 
-Costruzione di un modello relazionale:
-Relazione 1 a molti tra Customer Loyalty History (Loyalty Number) e Customer Flight Activity (Loyalty Number).
-Collegamento tra Calendar e le date di volo (Customer Flight Activity[Date]).
-Direzione dei filtri personalizzata per consentire un corretto propagarsi del contesto tra tabelle.
+## DAX Measures
+The project involved the creation of some **DAX** **measures** to ensure in-depth analysis and effectively answer business questions. Among the main techniques and calculations implemented:
++ Delta % Year-over-Year (YoY): Calculating the percentage change between 2018 and 2017 values on key KPIs such as Total CLV, Total enrollments, Flights booked and average distance per flight.
++ Churn rate: Custom measure to determine the churn rate between enrollments and cancellations on a monthly basis.
++ Period-specific filtering: Creating filtered measures on specific time intervals, such as promotional period (February-April 2018) or summer (June-August 2018), via DAX functions such as FILTER() and DATE().
++ SAMEPERIODLASTYEAR(): Using SAMEPERIODLASTYEAR to easily compute comparisons between equivalent periods over different years within combined graphs.
++ Dynamic (context-sensitive) measures: Development of measures that respect the dynamic context of slicers and filters, such as Average CLV per active customer in the month and Average distance per flight by season or year selected.
 
-# 3️⃣ Creazione di misure DAX
-KPI sul volume di iscrizioni e cancellazioni.
-Calcolo del churn rate.
-Misure comparative 2018 vs 2017 su iscrizioni, voli e distanza percorsa.
-Creazione di delta % e delta assoluti per analisi temporali e campagne.
+---
 
-# 4️⃣ Dashboard & Visualizzazioni
+## Dashboard & Visualizations
 Creazione di più schede report con layout professionale:
 Impatto della campagna sulle iscrizioni (gross/net) ➡ grafici KPI, churn rate, trend mensile.
 Analisi demografica dell’adozione della campagna ➡ grafici per Education, Income, Province, Gender.
