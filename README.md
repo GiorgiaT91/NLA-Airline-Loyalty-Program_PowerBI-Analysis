@@ -1,5 +1,5 @@
 # NLA Airline Loyalty Program - PowerBI Analysis
-
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png)
 ## Project Overview
 This project focuses on data analysis of Northern Lights Air (NLA), a Canadian fictitious airline that implemented a promotional campaign between February and April 2018 to increase enrollments in its loyalty program.
 The dashboard developed in Power BI focuses on the impact of the campaign on loyalty program enrollments, member socio-demo attributes, and flight behavior during the following summer.
