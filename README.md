@@ -1,29 +1,26 @@
 # NLA Airline Loyalty Program - PowerBI Analysis
 ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png)
-## Project Overview
-This project focuses on data analysis of Northern Lights Air (NLA), a Canadian fictitious airline that implemented a promotional campaign between February and April 2018 to increase enrollments in its loyalty program.
-The dashboard developed in Power BI focuses on the impact of the campaign on loyalty program enrollments, member socio-demo attributes, and flight behavior during the following summer.
+
+## Introduction to the Project
+This project focuses on data analysis of **Northern** **Lights** **Air** (NLA), a Canadian fictitious airline that implemented a promotional campaign between **February** **and** **April** **2018** to increase enrollments in its loyalty program.
+The dashboard developed in Power BI focuses on the impact of the campaign on loyalty program enrollments, member socio-demo attributes and flight behavior during the following summer.
 
 ---
 
-## Business Problem
-+ Quale impatto ha avuto la campagna sulle iscrizioni al programma fedeltà (lordo/netto)?
-+ L'adozione della campagna ha avuto più successo per alcuni gruppi demografici di membri del programma fedeltà?
-+ Che impatto ha avuto la campagna sui voli prenotati durante l'estate?
+## Business Objectives
+The main objective of the analysis is to **quantify** **the** **impact** **of** **the** **promotional** **campaign** on the loyalty program. 
+
+In particular, it aims to answer three specific questions:
++ What impact did the campaign have on loyalty program memberships (gross / net)?
++ Was the campaign adoption more successful for certain demographics of loyalty members?
++ What impact did the campaign have on booked flights during summer?
 
 ---
 
-## Tecnologie e strumenti
-Power BI Desktop
-DAX (Data Analysis Expressions)
-Power Query
-Data Modeling (relazioni 1:N, direzioni filtro e normalizzazione)
-🚀 Azioni svolte per la creazione del report
+## Data Source
+The dataset was taken from [Maven Analytics](https://mavenanalytics.io/data-playground) and includes tables containing information on Customer Flight Activity and Customer Loyalty History.
 
----
-
-## Dati
-Il set di dati è stato preso dal sito [Maven Analytics](https://mavenanalytics.io/data-playground) e comprende tabelle contenenti informazioni su Customer Flight Activity e Customer Loyalty History.
+In particular, the ***Customer Loyalty History*** table contains the detail of all registered customers, including location, gender, education, salary, marital status, customer lifetime value, enrollment type, date of enrollment and/or cancellation. The ***Customer Flight Activity*** table includes details of flights, including date, distance traveled by customers per trip, points accumulated and redeemed, and cost associated with redeemed points.
 
 | Table                          | Description                               |
 |--------------------------------|-------------------------------------------|
@@ -32,22 +29,33 @@ Il set di dati è stato preso dal sito [Maven Analytics](https://mavenanalytics.
 | Calendar                       | Date for time data analysis               |
 | Airplane Loyalty Data Dictionary | Description of all fields                |
 
+---
 
+## Tech Tools Utilized:
++ Excel: Data Exploration
++ PowerBI: Data Cleaning with Power Query, Data Modeling, DAX functions, Data Visualization
+
+---
+## Data Preparation
+Comprehension and exploration through loading and importing data, examining the structure of the dataset through column headers and data types, and transferring .csv data into the Power BI Power Query Editor.
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_2.png)
 
 ---
 
-# 1️⃣ Data Cleaning & Data Preparation
-Importazione di 3 dataset:
-Customer Loyalty History
-Customer Flight Activity
-Calendar
-Pulizia dei dati in Power Query:
-Rimozione di valori nulli.
-Correzione di dati anomali (es. valori negativi su "Salary").
-Creazione di colonne calcolate (es. Season, Customer Value Tier, ecc.).
-Sostituzione di dati mancanti con valori medi su base Education.
+## Data Cleaning 
+To ensure an accurate and consistent analysis, a data cleaning and data preparation process was carried out within Power Query, which included the following activities:
++ Outlier handling: Identification and correction of **inconsistent** **values**, such as negative salaries, replaced with the average salary calculated by education level (Education).
++ Creation of derived fields: Generation of **new** **calculated** **columns** to enrich the analysis, such as "Salary Tier".
++ Missing Data Cleanup: Handling of **nulls** and incomplete attributes on master and behavioral variables, standardizing datasets.
++ Data normalization: Review and correction of decimal values on monetary columns (e.g., CLV), due to loss of decimal separators during import. Conversion of date fields to Date format.
 
-# 2️⃣ Data Modeling
+---
+
+## Data Modeling
+The data model is structured according to a classic **star** **schema**, with Customer Flight Activity as the **fact** **table**, containing transactional data related to flights (number of flights, distance traveled, points accumulated/redeemed, etc.) and Customer Loyalty History as the **dimension** **table**, describing the profile of customers (master name, loyalty level, CLV, membership type). The relationship between the two tables is 1:N on the ***Loyalty*** ***Number*** key, where each customer can generate multiple flight activities over time. This schema allows analyzing the performance of the loyalty program by segmenting the results by demographic and behavioral characteristics of the members.
+
+---
+
 Costruzione di un modello relazionale:
 Relazione 1 a molti tra Customer Loyalty History (Loyalty Number) e Customer Flight Activity (Loyalty Number).
 Collegamento tra Calendar e le date di volo (Customer Flight Activity[Date]).
