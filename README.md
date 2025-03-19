@@ -56,8 +56,8 @@ To ensure an accurate and consistent analysis, a data cleaning and data preparat
 The data model is structured according to a classic **star** **schema**, with Customer Flight Activity as the **fact** **table**, containing transactional data related to flights (number of flights, distance traveled, points accumulated/redeemed, etc.) and Customer Loyalty History as the **dimension** **table**, describing the profile of customers (master name, loyalty level, CLV, membership type). The relationship between the two tables is 1:N on the ***Loyalty*** ***Number*** key, where each customer can generate multiple flight activities over time. This schema allows analyzing the performance of the loyalty program by segmenting the results by demographic and behavioral characteristics of the members.
 
 To properly separate customer lifecycle events from transactional flight activity, the model includes two calendar tables:
-+ Calendar is used for customer-level dates, such as enrollment and cancellation dates related to the loyalty program lifecycle.
-+ Calendar_Flight Activity is a duplicate of the Calendar table, created specifically to manage the temporal dimension of the flight transactions.
++ _Calendar_ is used for customer-level dates, such as enrollment and cancellation dates related to the loyalty program lifecycle.
++ _Calendar_Flight Activity_ is a duplicate of the Calendar table, created specifically to manage the temporal dimension of the flight transactions.
 
 This approach ensures clean separation between the customer timeline (e.g., when a customer joined or left the program) and the flight activity timeline (e.g., flight bookings by month or season), avoiding overlaps in filters and enabling targeted time-based analysis for each context.
 
@@ -76,26 +76,45 @@ The project involved the creation of some **DAX** **measures** to ensure in-dept
 ---
 
 ## Dashboard & Visualizations
-Creazione di più schede report con layout professionale:
-Impatto della campagna sulle iscrizioni (gross/net) ➡ grafici KPI, churn rate, trend mensile.
-Analisi demografica dell’adozione della campagna ➡ grafici per Education, Income, Province, Gender.
-Comportamento sui voli estivi ➡ focus su estate 2018 vs estate 2017 (voli, distanze e punti fedeltà).
-Heatmap stagionale e mappa geografica su province canadesi.
+The Power BI report is divided into **4** **pages**, each addressing specific analytical goals related to the NLA loyalty program and its promotional campaign:
 
-# 5️⃣ UX migliorata
-Utilizzo di slicer su Enrollment Type (Promo vs Standard) e su Season.
-Creazione di grafici combinati (linea + barre) per evidenziare variazioni anno su anno.
-Applicazione di formattazione condizionale su valori delta.
+**1)** **Campaign** **Overview**:
++ KPI Cards: Overview of total enrollments, cancellations, net enrollments, and churn rate.
++ Enrollment Trend Line Chart: Monthly trend of enrollments over several years with a focus on the Feb-Apr 2018 promotional period.
++ Comparative Analysis: Insights on enrollments compared to the previous period and the same months of the prior year, highlighting the campaign’s contribution.
 
-# 🎯 Obiettivi del progetto
-Analizzare l’efficacia della campagna fedeltà in termini di customer acquisition e comportamento d’acquisto.
-Mostrare capacità di creare un report Power BI end-to-end: dalla pulizia dati al data storytelling.
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png)
 
-# 📈 Screenshot (opzionale)
+**2)** **Revenue** **Focus**:
++ KPI Cards: Total and average CLV, flights per customer, average points accumulated and redeemed per customer.
++ Bar and Line Combo Chart: Monthly trend of total flights with enrollment type segmentation.
++ Bar Charts: CLV breakdown by province and city.
++ Funnel Chart: Average CLV segmented by education level.
 
-# 📷 Inserire eventuali immagini o GIF della dashboard Power BI.
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_4.png)
 
-# 📥 Come esplorare il report
-Apri il file .pbix incluso nella repo.
-Esplora le diverse pagine del report.
-Utilizza slicer e filtri per personalizzare la visualizzazione.
+**3)** **Demographics** **Focus**:
++ Bar Charts: Breakdown of enrollments (standard vs promo) by key demographics: gender, marital status, education, salary tier, and loyalty card type.
++ Heatmap: Enrollments by province and season to detect geographical and seasonal patterns in campaign adoption.
+
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_5.png)
+
+**4)** **Impact** **on** **Summer** **2018**:
++ KPI Cards: Summer 2018 flights, points accumulated, points redeemed, and dollar value of redeemed points, each compared to summer 2017.
++ Combo Chart: Total summer flights in 2018 with a YoY delta % line.
++ Grouped Bar Chart: Seasonal comparison of distance traveled (2017 vs 2018).
++ Deep-dive charts: Average flight distance per month and behavioral analysis of Promo vs Standard customers during summer.
+
+![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_6.png)
+
+The first three pages include a slicer, _Enrollment Type_, to allow for dynamic filtering across all visualizations.
+
+---
+
+## Data Analysis & Insights
+
+# Power BI Dashboard Link
+Clink The Link to
+.
+
+
