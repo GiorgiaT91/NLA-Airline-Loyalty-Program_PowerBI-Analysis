@@ -38,6 +38,7 @@ In particular, the ***Customer Loyalty History*** table contains the detail of a
 ---
 ## Data Preparation
 Comprehension and exploration through loading and importing data, examining the structure of the dataset through column headers and data types, and transferring .csv data into the Power BI Power Query Editor.
+
 ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_2.png)
 
 ---
@@ -47,7 +48,7 @@ To ensure an accurate and consistent analysis, a data cleaning and data preparat
 + Outlier handling: Identification and correction of **inconsistent** **values**, such as negative salaries, replaced with the average salary calculated by education level (Education).
 + Creation of derived fields: Generation of **new** **calculated** **columns** to enrich the analysis, such as "Salary Tier".
 + Missing Data Cleanup: Handling of **nulls** and incomplete attributes on master and behavioral variables, standardizing datasets.
-+ Data normalization: Review and correction of decimal values on monetary columns (e.g., CLV), due to loss of decimal separators during import. Conversion of date fields to Date format.
++ Data normalization: Review and correction of decimal values on monetary columns (e.g., CLV), due to loss of decimal separators during import. Conversion of date fields to Date format (e.g., Enrollment Date).
 
 ---
 
