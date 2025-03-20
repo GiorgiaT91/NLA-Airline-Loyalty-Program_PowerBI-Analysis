@@ -129,9 +129,7 @@ The Power BI report is divided into **four** **pages**, each one addressing spec
 + Grouped bar chart: seasonal comparison of distance traveled (2017 vs 2018).
 + Bar charts: total summer flights 2018 by education and salary tier compared to 2017.
 
-| |
-|:---:|
-| ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_6.png) |
+
 
 The first three pages include a slicer, _Enrollment Type_, to allow for dynamic filtering across all visualizations.
 
