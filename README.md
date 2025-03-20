@@ -1,4 +1,4 @@
-# NLA Airline Loyalty Program - PowerBI Analysis
+# NLA Airline Loyalty Program - Power BI Analysis
 
 | |
 |:---:|
@@ -6,13 +6,13 @@
 
 
 ## Introduction to the Project
-This project focuses on data analysis of **Northern** **Lights** **Air** (NLA), a Canadian fictitious airline that implemented a promotional campaign between **February** **and** **April** **2018** to increase enrollments in its loyalty program.
-The dashboard developed in Power BI focuses on the impact of the campaign on loyalty program enrollments, member socio-demo attributes and flight behavior during the following summer.
+This project focuses on analyzing data from **Northern** **Lights** **Air** (NLA), a fictitious Canadian airline that implemented a promotional campaign between **February** and **April** **2018** to increase enrollments in its loyalty program.
+The dashboard developed in Power BI focuses on the impact of the campaign on loyalty program enrollments, member-demo attributes, and flight behavior during the following summer.
 
 ---
 
 ## Business Objectives
-The main objective of the analysis is to **quantify** **the** **impact** **of** **the** **promotional** **campaign** on the loyalty program. 
+The primary purpose of the analysis is to **quantify** **the** **impact** **of** **the** **promotional** **campaign** on the loyalty program. 
 
 In particular, it aims to answer three specific questions:
 + _What impact did the campaign have on loyalty program memberships (gross / net)?_
@@ -24,7 +24,9 @@ In particular, it aims to answer three specific questions:
 ## Data Source
 The dataset was taken from [Maven Analytics](https://mavenanalytics.io/data-playground) and includes tables containing information on Customer Flight Activity and Customer Loyalty History.
 
-In particular, the ***Customer Loyalty History*** table contains the detail of all registered customers, including location, gender, education, salary, marital status, customer lifetime value, enrollment type, date of enrollment and/or cancellation. The ***Customer Flight Activity*** table includes details of flights, including date, distance traveled by customers per trip, points accumulated and redeemed, and cost associated with redeemed points.
+Specifically, the ***Customer Loyalty History*** table contains the detail of all registered customers, including location, gender, education, salary, marital status, customer lifetime value, enrollment type, enrollment and/or cancellation date. 
+
+The ***Customer Flight Activity*** table includes details of flights, including date, distance traveled by customers per trip, points accumulated and redeemed, and cost associated with redeemed points.
 
 | Table                          | Description                               |
 |--------------------------------|-------------------------------------------|
@@ -35,13 +37,18 @@ In particular, the ***Customer Loyalty History*** table contains the detail of a
 
 ---
 
-## Tech Tools Utilized:
+## Tools & Scope:
 + Excel: Data Exploration
 + PowerBI: Data Cleaning with Power Query, Data Modeling, DAX functions, Data Visualization
 
 ---
 ## Data Preparation
-Comprehension and exploration through loading and importing data, examining the structure of the dataset through column headers and data types, and transferring .csv data into the Power BI Power Query Editor.
+The project began with a **data** **ingestion** and **exploration** **phase**. The data sets, provided in CSV format, were loaded and imported into Power BI Power Query Editor for preprocessing. This initial phase included:
+
++ Evaluation of the data structure, in which column headers and data types were examined for consistency.
++ Identification of key variables, such as dates, categorical fields (e.g., Gender, Education, Enrollment Type) and numerical measures (e.g., CLV, Salary, Points).
++ Verification of data quality, with emphasis on null values (e.g., Salary for College) and outliers (negative values in Salary).
++ Preparation for modeling, in which raw data were transformed, cleaned, and enriched to enable efficient transformation and analysis in Power BI.
 
 | |
 |:---:|
@@ -50,22 +57,22 @@ Comprehension and exploration through loading and importing data, examining the 
 ---
 
 ## Data Cleaning 
-To ensure an accurate and consistent analysis, a data cleaning and data preparation process was carried out within Power Query, which included the following activities:
-+ Outlier handling: Identification and correction of **inconsistent** **values**, such as negative salaries, replaced with the average salary calculated by education level (Education).
-+ Creation of derived fields: Generation of **new** **calculated** **columns** to enrich the analysis, such as "Salary Tier".
-+ Missing Data Cleanup: Handling of **nulls** and incomplete attributes on master and behavioral variables, standardizing datasets.
-+ Data normalization: Review and correction of decimal values on monetary columns (e.g., CLV), due to loss of decimal separators during import. Conversion of date fields to Date format (e.g., Enrollment Date).
+As next step, to ensure an accurate and consistent analysis, a **data** **cleaning** and **data** **preparation** **process** was carried out within **Power** **Query**, which included the following activities:
++ Outlier handling: identification and correction of **inconsistent** **values**, such as negative salaries, replaced with the average salary calculated by education level (Education).
++ Creation of new fields: generation of **new** **calculated** **columns** to enrich the analysis, such as "Salary Tier".
++ Missing Data Cleanup: handling of **nulls** and incomplete attributes on demographic and behavioral variables, for standardizing the datasets.
++ Data normalization: correction of decimal values on monetary columns (e.g., CLV), due to loss of decimal separators during import; conversion of date fields to Date format (e.g., Enrollment Date).
 
 ---
 
 ## Data Modeling
-The data model is structured according to a classic **star** **schema**, with Customer Flight Activity as the **fact** **table**, containing transactional data related to flights (number of flights, distance traveled, points accumulated/redeemed, etc.) and Customer Loyalty History as the **dimension** **table**, describing the profile of customers (master name, loyalty level, CLV, membership type). The relationship between the two tables is 1:N on the ***Loyalty*** ***Number*** key, where each customer can generate multiple flight activities over time. This schema allows analyzing the performance of the loyalty program by segmenting the results by demographic and behavioral characteristics of the members.
+Once the data were transformed, cleaned, and enriched, the data model was structured according to a classic **star** **schema**, with Customer Flight Activity as the **fact** **table**, containing transactional data related to flights (Number of flights, Distance traveled, Points accumulated/redeemed) and Customer Loyalty History as the **dimension** **table**, describing the profile of customers (Education, Enrollment Type, CLV). The relationship between the two tables is 1:N on the ***Loyalty*** ***Number*** key, since each customer can take more than one flight over time. This schema allows analyzing the performance of the loyalty program by segmenting the results by demographic and behavioral characteristics of the members.
 
 To properly separate customer lifecycle events from transactional flight activity, the model includes two calendar tables:
 + _Calendar_ is used for customer-level dates, such as enrollment and cancellation dates related to the loyalty program lifecycle.
 + _Calendar_Flight Activity_ is a duplicate of the Calendar table, created specifically to manage the temporal dimension of the flight transactions.
 
-This approach ensures clean separation between the customer timeline (e.g., when a customer joined or left the program) and the flight activity timeline (e.g., flight bookings by month or season), avoiding overlaps in filters and enabling targeted time-based analysis for each context.
+This approach ensures a clear separation between the customer timeline (when a customer joined or left the program) and the flight activity timeline (flight bookings by month or season), avoiding overlaps in filters and allowing targeted time-based analysis for each context.
 
 | |
 |:---:|
@@ -74,50 +81,53 @@ This approach ensures clean separation between the customer timeline (e.g., when
 ---
 
 ## DAX Measures
-The project involved the creation of some **DAX** **measures** to ensure in-depth analysis and effectively answer business questions. Among the main techniques and calculations implemented:
-+ Delta % Year-over-Year (YoY): Calculating the percentage change between 2018 and 2017 values on key KPIs such as Total CLV, Total enrollments, Flights booked and average distance per flight.
-+ Churn rate: Custom measure to determine the churn rate between enrollments and cancellations on a monthly basis.
-+ Period-specific filtering: Creating filtered measures on specific time intervals, such as promotional period (February-April 2018) or summer (June-August 2018), via DAX functions such as FILTER() and DATE().
-+ SAMEPERIODLASTYEAR(): Using SAMEPERIODLASTYEAR to easily compute comparisons between equivalent periods over different years within combined graphs.
-+ Dynamic (context-sensitive) measures: Development of measures that respect the dynamic context of slicers and filters, such as Average CLV per active customer in the month and Average distance per flight by season or year selected.
+The project involved the creation of some **DAX** **functions** to ensure in-depth analysis and effectively answer the business questions. Among the main techniques and calculations implemented:
++ Delta % Year-over-Year (YoY): calculating the percentage change between 2018 and 2017 values on key KPIs such as Total CLV, Total enrollments, Flights booked and average distance per flight.
++ Churn rate: custom measure to determine the churn rate between enrollments and cancellations on a monthly basis.
++ Period-specific filtering: creating filtered measures on specific time intervals, such as promotional period (February-April 2018) or summer (June-August 2018), via DAX functions such as FILTER() and DATE().
++ SAMEPERIODLASTYEAR(): using SAMEPERIODLASTYEAR to easily compute comparisons between equivalent periods over different years within combined graphs.
++ Dynamic measures: development of measures that respect the dynamic context of slicers and filters, such as Median CLV per active customer in the month and Average distance per flight by season or year selected.
 
 ---
 
 ## Dashboard & Visualizations
-The Power BI report is divided into **4** **pages**, each addressing specific analytical goals related to the NLA loyalty program and its promotional campaign:
+The Power BI report is divided into **four** **pages**, each one addressing specific analytical goals related to the NLA loyalty program and its promotional campaign:
 
 **1)** **Campaign** **Overview**:
-+ KPI Cards: Overview of total enrollments, cancellations, net enrollments, and churn rate.
-+ Enrollment Trend Line Chart: Monthly trend of enrollments over several years with a focus on the Feb-Apr 2018 promotional period.
-+ Comparative Analysis: Insights on enrollments compared to the previous period and the same months of the prior year, highlighting the campaign’s contribution.
++ KPI cards: overview of total enrollments, cancellations, net enrollments, and churn rate.
++ Enrollment & Churn Rate trend line chart: trend of enrollments and churn rate over the years and months.
++ Comparative analysis: insights on enrollments compared to the previous period (Nov 2017-Jan 2018) and the same months of the prior year (Feb-Apr 2017), highlighting the campaign’s contribution.
 
 | |
 |:---:|
 | ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_1.png) |
 
 **2)** **Revenue** **Focus**:
-+ KPI Cards: Total and average CLV, flights per customer, average points accumulated and redeemed per customer.
-+ Bar and Line Combo Chart: Monthly trend of total flights with enrollment type segmentation.
-+ Bar Charts: CLV breakdown by province and city.
-+ Funnel Chart: Average CLV segmented by education level.
++ KPI cards: total and median CLV, average flights per customer, total CLV 2018 compared to 2017.
++ Bar and line chart: monthly trend of total CLV 2018 with delta % CLV 2018 VS 2017.
++ Comparative analysis: a line chart compares the average accumulated points and the average redeemeded one by client
++ Bar charts: CLV breakdown by province and city.
++ Funnel chart: median CLV segmented by education level.
 
 | |
 |:---:|
 | ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_4.png) |
 
 **3)** **Demographics** **Focus**:
-+ Bar Charts: Breakdown of enrollments (standard vs promo) by key demographics: gender, marital status, education, salary tier, and loyalty card type.
-+ Heatmap: Enrollments by province and season to detect geographical and seasonal patterns in campaign adoption.
++ Pie charts: breakdown of enrollments by gender, loyalty card and marital status.
++ Bar chart: breakdown of enrollments by salary tier.
++ Funnel chart: total enrollments by education level.
++ Heatmap: enrollments by province to detect geographical patterns in campaign adoption.
 
 | |
 |:---:|
 | ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_5.png) |
 
 **4)** **Impact** **on** **Summer** **2018**:
-+ KPI Cards: Summer 2018 flights, points accumulated, points redeemed, and dollar value of redeemed points, each compared to summer 2017.
-+ Combo Chart: Total summer flights in 2018 with a YoY delta % line.
-+ Grouped Bar Chart: Seasonal comparison of distance traveled (2017 vs 2018).
-+ Deep-dive charts: Average flight distance per month and behavioral analysis of Promo vs Standard customers during summer.
++ KPI cards: total number of summer 2018 flights, points accumulated, points redeemed, and dollar value of redeemed points, each KPI card is compared to summer 2017.
++ Bar and line chart: total summer flights in 2018 by enrollment type with a YoY delta % line.
++ Grouped bar chart: seasonal comparison of distance traveled (2017 vs 2018).
++ Bar charts: total summer flights 2018 by education and salary tier compared to 2017.
 
 | |
 |:---:|
