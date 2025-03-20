@@ -156,10 +156,10 @@ Although no significant differences were observed based on gender, marital statu
 In addition, bachelor-level customers showed high enrollment rates in both promotional and standard programs.
 From a geographical point of view, regional trends reflected those of standard campaigns, without much variation among provinces.
 
-| |
-|:---:|
 | ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_7.png) |
-  
+|:---:|
+| *I applied a filter for 2018 promotion, selected “Bachelor” under “Enrollment by Education,” and as a result, I can see the breakdown of Bachelor's degrees by salary level.* |
+
 + What impact did the campaign have on booked flights during summer?
 
 The final page of the report, Impact on Summer 2018, shows the positive influence of the promotional campaign on summer flight behavior. 
@@ -172,22 +172,24 @@ High School students registered the highest growth in summer 2018 bookings (+53%
 
 ## Executive Summary
 
-The promotional campaign run by Northern Lights Air between February and April 2018 led to a significant increase in loyalty program memberships, reducing turn over and improving acquisition and retention metrics. 
-The campaign also resulted in a +48 % increase in customer lifetime value (CLV) compared to 2017, confirming its positive financial impact. Promo members showed higher travel frequency and accumulated more loyalty points per trip than standard members.
+The promotional campaign run by Northern Lights Air between February and April 2018 led to a **significant** **increase** **in** **loyalty** **program** **memberships**, **reducing** **turn** **over** and improving acquisition and retention metrics. 
+The campaign also resulted in a **+48%** **increase** **in** **CLV** compared to 2017, confirming its positive financial impact. Promo members showed higher travel frequency and accumulated more loyalty points per trip than standard members.
 From a demographic perspective, the campaign was particularly successful among low-income customers and Bachelor level profiles, with strong adoption in key regions such as British Columbia and Ontario.
-Lastly, the campaign led to higher engagement during the summer, with summer 2018 flight growth of +44% year-over-year and a significant increase in loyalty point usage. 
-Promo members and Bachelor/low-income customers played a key role in increasing summer traffic.
+Lastly, the campaign led to higher engagement during the summer, with summer 2018 flight growth of **+44%** **year-over-year** and a significant increase in loyalty point usage. 
+**Promo** **members** and **Bachelor/low-income** **customers** played a key role in increasing summer traffic.
 
 ---
 
 ## Power BI Dashboard Link
-Click the link to view the [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNGQ2MjIyYjAtYzE0YS00OWQzLWE1NzgtN2I4NTY0N2MxYWU2IiwidCI6ImM5NDI0M2ViLTZmMGUtNDU2Ni1hMjk2LWI1ZGZjOWQyNTczYiIsImMiOjh9).
+Click the link to view the [Dashboard](https://app.powerbi.com/view?r=eyJrIjoiNGQ2MjIyYjAtYzE0YS00OWQzLWE1NzgtN2I4NTY0N2MxYWU2IiwidCI6ImM5NDI0M2ViLTZmMGUtNDU2Ni1hMjk2LWI1ZGZjOWQyNTczYiIsImMiOjh9&pageName=1458df3c202a09cd95d1).
 
 ---
 
 ## About me
 Hi folks!
 I am Giorgia and I am a real passionate about DATA! 
+
+This is my first dashboard in Power BI, I am more than open to criticisms and tips!
 
 Let's stay in contact!
 
