@@ -139,24 +139,44 @@ The first three pages include a slicer, _Enrollment Type_, to allow for dynamic 
 
 ## Data Analysis & Insights
 
-Once the dashboard has been constructed, it becomes feasible to address the business objectives.
+Once the dashboard is completed, it is possible to address the business objectives.
 + What impact did the campaign have on loyalty program memberships (gross / net)?
 
-The promotional campaign launched between February and April 2018 generated a significant increase in loyalty program enrollments. Compared to both the previous period (Nov-Dec 2017) and the same months of the prior year (Feb-Apr 2017), total enrollments showed a strong upward trend, with a reduction in churn rate during the campaign period. The net enrollments (enrollments minus cancellations) confirmed the positive outcome, indicating that the campaign effectively improved customer acquisition and retention KPIs.
+The first two pages of the report, Campaign Overview and Revenues Focus, address this question from a business and a financial perspective. 
+The promotional campaign launched between February and April 2018 generated a significant increase in loyalty program enrollments.
+Ccompared to both the previous period (November 2018 - January 2017) and the same months of the prior year (February - April 2017), the total enrollments showed a strong upward trend, with a reduction in churn rate during the campaign period. 
+The net enrollments (enrollments - cancellations) confirmed the positive outcome, indicating that the campaign effectively improved customer acquisition and retention KPIs. 
+From a financial angle, the promotional campaign positively impacted the revenue generated in 2018, +48% increase in total CLV compared to 2017; the line chart highlights a substantial growth in CLV during the campaign months, with peaks of over +60% YoY delta. 
+In addition, insights into customer profiles reveal that doctors and college students experienced the highest median increases in CLV during the campaign. Promotion customers also showed more frequent travel behavior, accumulating more loyalty points per trip than standard members.
   
 + Was the campaign adoption more successful for certain demographics of loyalty members?
 
-The campaign adoption was more effective among certain customer segments. Specifically, customers with higher levels of education (Bachelor's and above), higher income tiers, and those holding premium loyalty cards (Aurora and Nova tiers) showed higher enrollment rates in the promotion. The regional breakdown also highlighted greater campaign success in provinces like Ontario and Quebec, while certain demographics such as married customers and customers aged 30-50 were particularly responsive to the campaign.
+The third page, Focus Demographics, addresses the above question. 
+Although no significant differences were observed based on gender, marital status or type of loyalty card, a key finding is that the campaign successfully attracted low-value customers, who showed a greater response to the promotion compared to the standards.
+In addition, bachelor-level customers showed high enrollment rates in both promotional and standard programs.
+From a geographical point of view, regional trends reflected those of standard campaigns, without much variation among provinces.
+
+| |
+|:---:|
+| ![Airline Loyalty Program PowerBI Dashboard](/Images/AIRLINE_7.png) |
   
 + What impact did the campaign have on booked flights during summer?
 
-The promotional campaign positively influenced summer flight behavior. The analysis of summer 2018 bookings (June-August) showed an increase in the total number of flights compared to summer 2017, particularly among Promo members. In addition, there was an increase in loyalty points accumulated and redeemed during the same period. Although the average distance per flight slightly decreased, the volume of flights booked by customers acquired through the promotion rose significantly, demonstrating a tangible behavioral shift driven by the campaign.
+The final page of the report, Impact on Summer 2018, shows the positive influence of the promotional campaign on summer flight behavior. 
+Total summer flights grew by +44% YoY, with Promo customers contributing significantly to this growth over multiple months, as shown in the bar-line chart.
+As flight traffic increases, the result is also an increase in loyalty points accumulated and redeemed in the summer period. 
+Seasonal comparison shows that all seasons, not just summer, experienced growth in distances traveled. 
+High School students registered the highest growth in summer 2018 bookings (+53% YoY delta), while low-value salary tier customers confirm that the promotional campaign was particularly effective among this customer segment.
 
 ---
 
 ## Executive Summary
 
-The promotional campaign implemented by Northern Lights Air (Feb-Apr 2018) led to a substantial increase in loyalty program memberships, both in gross and net terms, reducing churn and outperforming previous periods and the prior year. The campaign adoption was especially successful among high-value customer segments, including those with higher education and income levels, as well as premium loyalty cardholders. Moreover, the campaign had a positive impact on summer flight activity, driving higher booking volumes and increased loyalty points usage among Promo members, highlighting a clear improvement in customer engagement and transactional behavior.
+The promotional campaign run by Northern Lights Air between February and April 2018 led to a significant increase in loyalty program memberships, reducing turn over and improving acquisition and retention metrics. 
+The campaign also resulted in a +48 % increase in customer lifetime value (CLV) compared to 2017, confirming its positive financial impact. Promo members showed higher travel frequency and accumulated more loyalty points per trip than standard members.
+From a demographic perspective, the campaign was particularly successful among low-income customers and Bachelor level profiles, with strong adoption in key regions such as British Columbia and Ontario.
+Lastly, the campaign led to higher engagement during the summer, with summer 2018 flight growth of +44% year-over-year and a significant increase in loyalty point usage. 
+Promo members and Bachelor/low-income customers played a key role in increasing summer traffic.
 
 ---
 
